@@ -10,7 +10,13 @@ Clone the repository to your device
 Use npm to install all dependencies (project is built using Vite)
 
     npm i
-To locally host the site for testing:
+To locally host the site while developing:
 
     npm run dev
-The default local URL to the site should be **http://localhost:5173/**
+The default local URL to the dev site should be **http://localhost:5173/milpitashacks-25/**
+
+Before pushing, build the project and test the output:
+
+    npm run build
+    npm run preview
+The default local URL to the built site should be **http://localhost:4173/milpitashacks-25/**

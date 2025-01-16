@@ -13,7 +13,7 @@ header.hero-header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-image: url('/public/background.jpg');
+    background-image: url('/background.jpg');
     background-size: cover;  
     background-position: center;
     background-color: #1a1a1a;
