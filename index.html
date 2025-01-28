@@ -8,15 +8,17 @@
     <title>Milpitas Hacks 2025</title>
     <link rel="stylesheet" href="src/style.css" />
     <script type="module" src="src/main.js" defer></script>
-    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
   </head>
   <body>
     <header class="hero-header">
       <nav class="hero-bar">
         <!-- Top logo + menu items -->
         <div class="logo-container">
-          <img src="/Milpitas-Hacks-MH-White.png" alt="Milpitas Hacks Logo" class="mh-logo" loading="lazy" />
+          <a href="index.html">
+            <img src="/Milpitas-Hacks-MH-White.png" alt="Milpitas Hacks Logo" class="mh-logo" loading="lazy" />
+          </a>
         </div>
+        
 
         <div class="burger-menu" role="button" aria-label="Menu Toggle" aria-expanded="false">
           <span></span>
@@ -38,15 +40,21 @@
         <!-- Existing Logo and Date Content -->
         <div class="main-logo-container">
           <img src="/Milpitas-Hacks-Main-White.png" alt="Milpitas Hacks Main Event Logo" class="main-logo" loading="lazy" />
-          <div class="location-date-container">
-            <p class="location">Milpitas High School</p>
-            <p class="date">May 31, 2025</p>
-          </div>
+          
+        </div>
+
+        <div class="location-date-container">
+          <p class="location">Milpitas High School</p>
+          <p class="date">May 31, 2025</p>
+        </div>
+        
+
+        <div class="register-btn-container">
+          <a href="https://app.youform.com/forms/ae4ec8mi" class="register-btn" target="_blank" rel="noopener noreferrer">Register Now</a>
         </div>
       
         <!-- Countdown Timer -->
         <div class="countdown-container">
-          <h1 class="countdown-title">Milpitas Hacks</h1>
           <div class="countdown-timer">
             <div class="time-box">
               <span id="days">00</span>
@@ -67,9 +75,7 @@
           </div>
         </div>
 
-        <div class="register-btn-container">
-          <a href="https://app.youform.com/forms/ae4ec8mi" class="register-btn" target="_blank" rel="noopener noreferrer">Register Now</a>
-        </div>
+        
       </div>
     </header>
     <!-- Countdown Timer -->
@@ -99,6 +105,48 @@
         </div>
       </div>
     </section>
+    
+    <section class="carousel-section">
+      <h1 class="carousel-title">Past Hackathons</h1>
+      <div class="carousel-container">
+        <div class="carousel-track">
+          <!-- Images for the carousel -->
+          <div class="carousel-slide">
+            <img src="/public/optimized/IMG_5390.jpg" alt="Hackathon 1" class="carousel-image" />
+          </div>
+          <div class="carousel-slide">
+            <img src="/public/optimized/IMG_5400.jpg" alt="Hackathon 2" class="carousel-image" />
+          </div>
+          <div class="carousel-slide">
+            <img src="/public/optimized/IMG_5414.jpg" alt="Hackathon 3" class="carousel-image" />
+          </div>
+          <div class="carousel-slide">
+            <img src="/public/optimized/IMG_5482.jpg" alt="Hackathon 4" class="carousel-image" />
+          </div>
+          <div class="carousel-slide">
+            <img src="/public/optimized/IMG_5526.jpg" alt="Hackathon 5" class="carousel-image" />
+          </div>
+          
+          <!-- Duplicate Images for Infinite Effect -->
+          <div class="carousel-slide">
+            <img src="/public/optimized/IMG_5390.jpg" alt="Hackathon 1" class="carousel-image" />
+          </div>
+          <div class="carousel-slide">
+            <img src="/public/optimized/IMG_5400.jpg" alt="Hackathon 2" class="carousel-image" />
+          </div>
+          <div class="carousel-slide">
+            <img src="/public/optimized/IMG_5414.jpg" alt="Hackathon 3" class="carousel-image" />
+          </div>
+          <div class="carousel-slide">
+            <img src="/public/optimized/IMG_5482.jpg" alt="Hackathon 4" class="carousel-image" />
+          </div>
+          <div class="carousel-slide">
+            <img src="/public/optimized/IMG_5526.jpg" alt="Hackathon 5" class="carousel-image" />
+          </div>
+        </div>
+      </div>
+    </section>
+    
 
     <section class="schedule-section" id="schedule">
       <h1>Event Schedule</h1>
@@ -165,7 +213,7 @@
   <div class="speakers-container">
     <div class="speaker-card">
       <div class="speaker-photo-container">
-        <img src="speaker1.jpg" alt="Dr. Jane Doe" class="speaker-photo" />
+        <img src="/public/blankpfp.jpg" alt="Dr. Jane Doe" class="speaker-photo" />
       </div>
       <h3>Dr. Jane Doe</h3>
       <p class="speaker-title">Keynote Speaker, AI Expert</p>
@@ -180,7 +228,7 @@
 
     <div class="speaker-card">
       <div class="speaker-photo-container">
-        <img src="speaker2.jpg" alt="John Smith" class="speaker-photo" />
+        <img src="/public/blankpfp.jpg" alt="John Smith" class="speaker-photo" />
       </div>
       <h3>John Smith</h3>
       <p class="speaker-title">Frontend Development Lead</p>
@@ -195,10 +243,117 @@
   </div>
 </section>
 
+<section class="judges-section" id="judges">
+  <h1 class="judges-title">Meet Our Judges</h1>
+  <div class="judges-container">
+    <!-- Judge Card 1 -->
+    <div class="judge-card">
+      <div class="judge-photo-container">
+        <img src="/public/blankpfp.jpg" alt="Judge Name" class="judge-photo" />
+      </div>
+      <h3 class="judge-name">John Doe</h3>
+      <p class="judge-title">Chief Technology Officer</p>
+      <p class="judge-company">Google</p>
+    </div>
+
+    <!-- Judge Card 2 -->
+    <div class="judge-card">
+      <div class="judge-photo-container">
+        <img src="/public/blankpfp.jpg" alt="Judge Name" class="judge-photo" />
+      </div>
+      <h3 class="judge-name">Jane Smith</h3>
+      <p class="judge-title">AI Specialist</p>
+      <p class="judge-company">Microsoft</p>
+    </div>
+
+    <!-- Judge Card 3 -->
+    <div class="judge-card">
+      <div class="judge-photo-container">
+        <img src="/public/blankpfp.jpg" alt="Judge Name" class="judge-photo" />
+      </div>
+      <h3 class="judge-name">Alice Johnson</h3>
+      <p class="judge-title">Full-Stack Engineer</p>
+      <p class="judge-company">Meta</p>
+    </div>
+  </div>
+</section>
+
+<section class="team-section" id="team">
+  <h1 class="team-title">Meet Our Team</h1>
+
+  <!-- Tech Team -->
+  <div class="team-group">
+    <h2 class="team-group-title">Tech Team</h2>
+    <div class="team-container">
+      <div class="team-card">
+        <div class="team-photo-container">
+          <img src="/public/blankpfp.jpg" alt="Team Member" class="team-photo" />
+        </div>
+        <h3 class="team-name">Alex Johnson</h3>
+        <p class="team-role">Lead Developer</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo-container">
+          <img src="/public/blankpfp.jpg" alt="Team Member" class="team-photo" />
+        </div>
+        <h3 class="team-name">Taylor Smith</h3>
+        <p class="team-role">Backend Engineer</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Design Team -->
+  <div class="team-group">
+    <h2 class="team-group-title">Design Team</h2>
+    <div class="team-container">
+      <div class="team-card">
+        <div class="team-photo-container">
+          <img src="/public/blankpfp.jpg" alt="Team Member" class="team-photo" />
+        </div>
+        <h3 class="team-name">Jamie Lee</h3>
+        <p class="team-role">UI/UX Designer</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo-container">
+          <img src="/public/blankpfp.jpg" alt="Team Member" class="team-photo" />
+        </div>
+        <h3 class="team-name">Morgan Brown</h3>
+        <p class="team-role">Graphic Designer</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Marketing Team -->
+  <div class="team-group">
+    <h2 class="team-group-title">Marketing Team</h2>
+    <div class="team-container">
+      <div class="team-card">
+        <div class="team-photo-container">
+          <img src="/public/blankpfp.jpg" alt="Team Member" class="team-photo" />
+        </div>
+        <h3 class="team-name">Chris Green</h3>
+        <p class="team-role">Social Media Manager</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo-container">
+          <img src="/public/blankpfp.jpg" alt="Team Member" class="team-photo" />
+        </div>
+        <h3 class="team-name">Jordan Taylor</h3>
+        <p class="team-role">Content Strategist</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 <section class="faq-section" id="faq">
   <h1>FAQ</h1>
   <div class="faq-carousel-container">
-    <button class="arrow-btn left-arrow" aria-label="Previous">
+    <button class="arrow-btn faq-left-arrow" aria-label="Previous">
       <span>&lt;</span>
     </button>
     <div class="faq-carousel-wrapper">
@@ -249,10 +404,72 @@
         </div>
       </div>
     </div>
-    <button class="arrow-btn right-arrow" aria-label="Next">
+    <button class="arrow-btn faq-right-arrow" aria-label="Next">
       <span>&gt;</span>
     </button>
   </div>
 </section>
+
+<!-- <Sponsors Section -->
+ <section class="sponsors-section" id="sponsors">
+  <h1>Our Sponsors</h1>
+
+  <div class="sponsor-tier partner-tier">Partner</div>
+  <div class="sponsors-container">
+    <img src="/public/blankpfp.jpg" alt="Insert Logo Here" class="sponsor-logo" />
+    <img src="/public/blankpfp.jpg" alt="Insert Logo Here" class="sponsor-logo" />
+  </div>
+
+  <div class="sponsor-tier gold-tier">Gold</div>
+  <div class="sponsors-container">
+    <img src="/public/blankpfp.jpg" alt="Insert Logo Here" class="sponsor-logo" />
+    <img src="/public/blankpfp.jpg" alt="Insert Logo Here" class="sponsor-logo" />
+    <img src="/public/blankpfp.jpg" alt="Insert Logo Here" class="sponsor-logo" />
+  </div>
+
+  <div class="sponsor-tier silver-tier">Silver</div>
+  <div class="sponsors-container">
+    <img src="/public/blankpfp.jpg" alt="Insert Logo Here" class="sponsor-logo" />
+    <img src="/public/blankpfp.jpg" alt="Insert Logo Here" class="sponsor-logo" />
+    <img src="/public/blankpfp.jpg" alt="Insert Logo Here" class="sponsor-logo" />
+  </div>
+
+  <div class="sponsor-tier bronze-tier">Bronze</div>
+  <div class="sponsors-container">
+    <img src="/public/blankpfp.jpg" alt="Insert Logo Here" class="sponsor-logo" />
+    <img src="/public/blankpfp.jpg" alt="Insert Logo Here" class="sponsor-logo" />
+    <img src="/public/blankpfp.jpg" alt="Insert Logo Here" class="sponsor-logo" />
+    <img src="/public/blankpfp.jpg" alt="Insert Logo Here" class="sponsor-logo"  />
+  </div>
+</section>
+
+
+
+
+
+
+<section class="sponsorship-section" id="sponsors">
+  <h1>Become a Sponsor</h1>
+  <p>
+    Milpitas High School has long been home to passionate programmers, from web developers
+to backend engineers. Through Milpitas Hacks, we aim to extend this passion across the Bay
+Area by hosting a hackathon for high school and middle school students. Participants will
+unleash their creativity to develop innovative solutions aligned with various tracks, which will
+be announced on the day of the event.
+  </p>
+  <p>
+    In addition to competing for exciting prizes, students will gain access to valuable
+    opportunities that can help shape their futures. This year, we aim to welcome over 250
+    participants, and we need your support to make this possible. Please consider sponsoring us
+    and helping bring this hackathon to life.
+      </p>
+  <div class="tiers">
+  </div>
+  <footer>
+    <p>*All participant numbers are estimates. Contact us for more details.</p>
+  </footer>
+</section>
+
+
   </body>
 </html>

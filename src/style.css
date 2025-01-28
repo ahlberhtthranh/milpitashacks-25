@@ -21,27 +21,59 @@
     background-color: #a8bbbf;  
 }
 
-/* Countdown Timer Styling */
-.countdown-container {
-    display: flex;
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
-    text-align: center;
-    gap: 20px; 
-    position: absolute;
-    left: 50%; 
-    transform: translate(-50%, -50%);
+body {
+    min-width: 1024px; /* minimum width for desktop layout */
 }
 
-  
-.countdown-title {
-    font-size: 8rem; 
-    font-weight: bold;
-    margin-bottom: 0; 
-    font-family: 'Rubik', sans-serif;
-    color: white;
+/* Countdown Timer Styling */
+/* Countdown Timer Container */
+
+.countdown-container {
+    max-height: 80vh;
+    max-width: 80vw;
+    position: absolute;
+    top: 40%;
+    right: 12%; 
+    transform: translateY(-50%); 
+    text-align: right;
+    margin-bottom: 0;
 }
+
+
+.countdown-timer {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .time-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 8vw; 
+    height: 20vh; 
+    background-color: #1d2b3a;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .time-box span {
+    font-size: 64px;
+    font-weight: bold;
+    color: #f9c74f;
+  }
+  
+  .time-box .label {
+    margin-top: 10px;
+    font-size: clamp(1rem, 2vw, 1.5rem); 
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+  }
+  
   
  
 /* General Reset and Body Styling */
@@ -52,6 +84,8 @@ body, html {
     font-family: 'Arial', sans-serif;
     background-color: #162635; 
     scroll-behavior: smooth;
+    overflow-x: hidden; /* Disable horizontal scrolling */
+    max-width: 100vw; /* Prevents content from exceeding viewport width */
 }
 
 /* Hero Header Styles */
@@ -131,11 +165,13 @@ header.hero-header {
     }
 
     .location-date-container {
+        position: absolute; 
+        bottom: 40px; 
+        padding-left: 20px; 
         display: flex;
         gap: 50px;
         align-items: center;
-        margin-top: 10px;
-        text-align: left;
+        text-align: left; 
         color: #ffff;
         font-family: 'Rubik', serif;
         font-weight: 500;
@@ -143,30 +179,33 @@ header.hero-header {
 
     .location,
     .date {
-        font-size: 20px;
+        font-size: 28px;
         margin: 0;
     }
 
     .main-logo-container {
-        max-height: 35%;
-        max-width: 100%;
+        display: flex;
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: flex-start; 
         position: absolute;
-        width: auto;
-        text-align: left;
-        bottom: 3%;
-        left: 2.5%;
+        top: 40%; 
+        left: 12%; 
+        transform: translateY(-50%);
+        gap: 2vw; 
     }
+    
 
     .main-logo {
-        max-height: 35%;
-        max-width: 300px;
-        width: 80%;
+        max-height: auto;
+        max-width: 30vw;
     }
 
     .register-btn-container {
         position: absolute;
-        right: 2.5%;
-        bottom: 3.5%;
+        bottom: 40px;
+        right: 60px;
+        transform: translateY(0);
     }
 
     .hero-content {
@@ -189,42 +228,8 @@ header.hero-header {
     .logo-container .mh-logo {
         max-height: 50px;
     }
-
-     /* Countdown Timer  */
-  .countdown-timer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px; 
-  }
-  
-  .time-box {
-    display: flex;
-    flex-direction: column; 
-    justify-content: center;
-    align-items: center;
-    width: 220px; 
-    height: 260px; 
-    background-color: #1d2b3a; 
-    border-radius: 8px; 
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-  }
-  
-  .time-box span {
-    font-size: 6rem; 
-    font-weight: bold;
-    color: #f9c74f; 
-  }
-  
-  .time-box .label {
-    margin-top: 5px; 
-    font-size: 2rem; 
-    color: white; 
-    text-transform: uppercase;
-    font-family: 'Poppins', sans-serif;
-  }
 }
+
 
 /* Mobile Layout */
 @media screen and (max-width: 1340px) {
@@ -347,7 +352,7 @@ header.hero-header {
     }
 
     .countdown-container {
-        display: none; /* Hides the entire countdown timer container */
+        display: none !important; /* Hides the entire countdown timer container */
       }
 }
 
@@ -418,7 +423,87 @@ header.hero-header {
     color: #d6d6d6;
     line-height: 1.5;
 }
+/* Carousel Section */
+.carousel-section {
+    background-color: #162635;
+    padding: 60px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  
+  /* Section Title */
+  .carousel-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 30px;
+  }
+  
+  /* Carousel Container */
+  .carousel-container {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Carousel Track */
+  .carousel-track {
+    display: flex;
+    gap: 30px;
+    width: max-content; /* Ensures it doesn't stretch beyond content */
+    animation: scrollAnimation 30s linear infinite;
+    white-space: nowrap; /* Prevents breaking rows */
+  }
+  
+  /* Individual Images */
+  .carousel-image {
+    width: 300px; /* Adjust for bigger images */
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Infinite Scrolling Keyframes */
+  @keyframes scrollAnimation {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  
 
+  
+  /* Individual Images */
+  .carousel-image {
+    width: 300px; /* Bigger images */
+    height: 200px; /* Increased height */
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Infinite Scrolling Keyframes */
+  @keyframes scrollAnimation {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-25%);
+    }
+  }
+  
+  
 
 /* Fade-In Animation */
 @keyframes fadeIn {
@@ -548,131 +633,315 @@ header.hero-header {
     color: white;
     padding: 60px 20px;
     text-align: center;
-}
+  }
   
-.speakers-section h1 {
-    font-size: 2.5rem;
+  .speakers-section h1 {
+    font-size: 2.5rem; 
     margin-bottom: 40px;
-    color: white;
-}
+    color: white; 
+  }
   
-/* Container for the speaker cards */
-.speakers-container {
+  /* Container for the speaker cards */
+  .speakers-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-}
+  }
   
-/* Individual speaker card */
-.speaker-card {
-    background-color: #1d2b3a;
-    border-radius: 8px;
+  /*  speaker card */
+  .speaker-card {
+    background-color: #1d2b3a; 
+    border-radius: 8px; 
     padding: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); 
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+  }
   
-.speaker-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-}
+  .speaker-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); 
+  }
   
-/* Speaker photo styling */
-.speaker-photo {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    max-height: 200px; 
-    object-fit: cover;
-}
+  /* Speaker photo container */
+  .speaker-photo-container {
+    position: relative;
+    width: 120px; 
+    height: 120px;
+    margin: 0 auto 15px; 
+    border-radius: 50%; 
+    background-color: #ffffff; 
+    border: 4px solid #f9c74f; 
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); 
+    overflow: hidden; 
+  }
   
-/* Speaker details */
-.speaker-card h3 {
+  /* Speaker photo */
+  .speaker-photo {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+  }
+  
+  /* Speaker details */
+  .speaker-card h3 {
     margin: 10px 0 5px 0;
     font-size: 1.5rem;
     color: #f9c74f; 
-}
+  }
   
-.speaker-title {
+  .speaker-title {
     font-size: 1rem;
     font-weight: 500;
-    color: #d6d6d6;
+    color: #d6d6d6; 
     margin-bottom: 10px;
-}
+  }
   
-.speaker-bio {
+  .speaker-bio {
     font-size: 0.9rem;
-    color: #d6d6d6;
+    color: #d6d6d6; 
     line-height: 1.5;
+  }
+
+/*  Sponsorship  Styles */
+.sponsorship-section {
+    padding: 60px 20px;
+    background-color: #162635; 
+    color: white;
+    text-align: center;
+  }
+  
+  .sponsorship-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #f3f4f6;
+  }
+  
+  .sponsorship-section p {
+    font-size: 1rem; 
+    line-height: 1.6; 
+    color: #cbd5e1; 
+    max-width: 800px; 
+    margin: 0 auto 20px; 
+  }
+  
+  .tiers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; 
+    align-items: stretch; 
+  }
+  
+  .tiers .card {
+    background: #334155;
+    color: #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    flex: 1 1 300px; 
+    max-width: 300px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .tiers .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+.tiers .card.bronze h2 {
+    color: #cd7f32; 
+  }
+  
+  .tiers .card.silver h2 {
+    color: #c0c0c0; 
+  }
+  
+  .tiers .card.gold h2 {
+    color: #ffd700; 
+  }
+  
+  .tiers .card.partner h2 {
+    color: #ff6f61; 
+  }
+  
+
+  
+
+ .tiers .card p {
+  font-size: 1.2rem; 
+  line-height: 1.6; 
+  margin-bottom: 20px;
 }
   
-/* FAQ Section */
+  .tiers .card ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    font-size: 1.1rem; 
+    line-height: 1.8; 
+  }
+  
+  .tiers .card a.contact-button {
+    display: inline-block;
+    margin-top: auto;
+    background: transparent;
+    border: 2px solid #60a5fa;
+    color: #60a5fa;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none; 
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .tiers .card a.contact-button:hover {
+    background: #60a5fa;
+    color: #1e293b;
+  }
+  
+ /* Sponsors Section */
+.sponsors-section {
+    background-color: #162635;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.sponsors-section h1 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.sponsor-tier {
+    font-size: 2rem;
+    margin: 30px 0;
+}
+
+/* Tier Colors */
+.sponsor-tier.bronze-tier {
+    color: #d88a44; 
+}
+
+.sponsor-tier.silver-tier {
+    color: #c0c0c0; 
+}
+
+.sponsor-tier.gold-tier {
+    color: #ffd700; 
+}
+
+.sponsor-tier.partner-tier {
+    color: #ff6b6b; 
+}
+
+.sponsors-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.sponsor-logo {
+    width: 200px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    object-fit: contain;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sponsor-logo:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .sponsors-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .sponsor-logo {
+        width: 180px;
+        height: auto;
+    }
+}
+
+
+  
+/* FAQ Section  */
+
 .faq-section {
     background-color: #162635;
-    color: #162635;
+    color: #ffffff;
     padding: 60px 20px;
     text-align: center;
-}
+  }
   
-.faq-section h1 {
+  .faq-section h1 {
     font-size: 3rem;
     margin-bottom: 40px;
-    color: white;
-}
+    color: #ffffff;
+  }
   
-/* FAQ Carousel */
-.faq-carousel {
+  /* FAQ Carousel Styles */
+  .faq-carousel {
     display: flex;
-    gap: 30px;
     transition: transform 0.5s ease-in-out;
-    overflow: visible; 
-}
-  
-.faq-card {
-    background-color:#1d2b3a;
-    color: white;
-    border-radius: 5px;
-    padding: 20px;
-    width: 300px;
-    flex-shrink: 0; 
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);    
-    text-align: center;
-    transform-origin: center;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-  .faq-card.center {
-    transform: scale(1.1); 
-    z-index: 1; 
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-  
-.faq-card:not(.center) {
-    transform: scale(0.9); 
-    opacity: 0.6; 
-}
-  
-.faq-carousel-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
+  }
   
   .faq-carousel-wrapper {
     overflow: hidden;
     max-width: 900px;
-    width: 100%;
-}
+    margin: 0 auto;
+    position: relative;
+  }
   
+  .faq-card {
+    background-color: #1d2b3a;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    flex-shrink: 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
   
-/* Arrows */
-.arrow-btn {
-    background-color: white;
+  .faq-card.active {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  
+  .faq-card:not(.active) {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  
+  .faq-carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .arrow-btn {
+    background-color: #ffffff;
     border: none;
     border-radius: 50%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -684,19 +953,183 @@ header.hero-header {
     justify-content: center;
     margin: 0 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+  }
   
-.arrow-btn:hover {
+  .arrow-btn:hover {
     transform: scale(1.1);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
+  }
   
-.arrow-btn span {
+  .arrow-btn span {
     font-size: 1.5rem;
     color: #162635;
-}
+  }
   
   
+
+
+/* Judges Section */
+.judges-section {
+    background-color: #162635;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+  }
   
+  .judges-title {
+    font-size: 2.5rem; 
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #ffffff; 
+  }
   
+  .judges-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  /*  Judge Card */
+  .judge-card {
+    background-color: #1d2b3a; 
+    border-radius: 12px; 
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .judge-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Profile Picture Styling */
+  .judge-photo-container {
+    position: relative;
+    width: 120px; 
+    height: 120px;
+    margin: 0 auto 15px; 
+    border-radius: 50%; 
+    background-color: #ffffff; 
+    border: 4px solid #f9c74f; 
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); 
+    overflow: hidden; 
+  }
+  
+  .judge-photo {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+  }
+  
+  /* Judge Text Details */
+  .judge-name {
+    font-size: 1.25rem; 
+    font-weight: bold;
+    color: #f9c74f; 
+    margin: 10px 0 5px;
+  }
+  
+  .judge-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #d6d6d6; 
+    margin: 0;
+  }
+  
+  .judge-company {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #ffffff; 
+    margin-top: 5px;
+  }
+
+  /* Team Section */
+.team-section {
+    background-color: #162635; 
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .team-title {
+    font-size: 2.5rem; 
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: white; 
+  }
+  
+  /* Team Group Styles */
+  .team-group {
+    margin-bottom: 40px;
+  }
+  
+  .team-group-title {
+    font-size: 2rem; 
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #ffff; 
+  }
+  
+  /* Team Container */
+  .team-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 30px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+  }
+  
+  /* Individual Team Card */
+  .team-card {
+    background-color: #1d2b3a; 
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 250px; 
+  }
+  
+  .team-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); 
+  }
+  
+  /* Team Photo Styling */
+  .team-photo-container {
+    position: relative;
+    width: 120px; 
+    height: 120px;
+    margin: 0 auto 15px; 
+    border-radius: 50%; 
+    background-color: #ffffff; 
+    border: 4px solid #f9c74f; 
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); 
+    overflow: hidden; 
+  }
+  
+  .team-photo {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+  }
+  
+  /* Team Member Text Details */
+  .team-name {
+    font-size: 1.25rem; 
+    font-weight: bold;
+    color: #f9c74f; 
+    margin: 10px 0 5px;
+  }
+  
+  .team-role {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #d6d6d6; 
+  }
   
