@@ -423,87 +423,75 @@ header.hero-header {
     color: #d6d6d6;
     line-height: 1.5;
 }
-/* Carousel Section */
+
+
+
+
+
+
+/* Images Carousel */
 .carousel-section {
-    background-color: #162635;
-    padding: 60px 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-  }
-  
-  /* Section Title */
-  .carousel-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: white;
-    margin-bottom: 30px;
-  }
-  
-  /* Carousel Container */
-  .carousel-container {
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    justify-content: center;
-  }
-  
-  /* Carousel Track */
-  .carousel-track {
-    display: flex;
-    gap: 30px;
-    width: max-content; /* Ensures it doesn't stretch beyond content */
-    animation: scrollAnimation 30s linear infinite;
-    white-space: nowrap; /* Prevents breaking rows */
-  }
-  
-  /* Individual Images */
-  .carousel-image {
-    width: 300px; /* Adjust for bigger images */
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  /* Infinite Scrolling Keyframes */
-  @keyframes scrollAnimation {
-    from {
+  background-color: #16263500;
+  padding: 60px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Section Title */
+.carousel-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 30px;
+}
+
+/* Carousel Container */
+.carousel-container {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+}
+
+/* Carousel Track */
+.carousel-track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  white-space: nowrap;
+  animation: scrollAnimation 20s linear infinite;
+}
+
+/* Individual Images */
+.carousel-image {
+  width: 300px; 
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Infinite Scrolling Animation */
+@keyframes scrollAnimation {
+  from {
       transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%);
-    }
   }
-  
+  to {
+      transform: translateX(-50%);
+  }
+}
 
   
-  /* Individual Images */
-  .carousel-image {
-    width: 300px; /* Bigger images */
-    height: 200px; /* Increased height */
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  /* Infinite Scrolling Keyframes */
-  @keyframes scrollAnimation {
-    from {
-      transform: translateX(0%);
-    }
-    to {
-      transform: translateX(-25%);
-    }
-  }
-  
-  
+
+
+
+
 
 /* Fade-In Animation */
 @keyframes fadeIn {
