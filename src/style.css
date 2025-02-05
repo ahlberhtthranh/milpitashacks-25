@@ -154,6 +154,28 @@ header.hero-header {
     margin-top: 3%;
 }
 
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Icon styling */
+.social-icon {
+  transition-duration: 0.5s;
+  width: 8vh;
+  margin-left: -0.6vw;
+  margin-right: -0.6vw;
+  padding: 0;
+  transform: translateY(0.75vh);
+  filter: invert();
+}
+
+.social-icon:hover {
+  scale: 110%;
+  cursor: pointer;
+}
+
 /* Desktop Layout */
 @media screen and (min-width: 1341px) {
     .hyperlinks {
@@ -164,8 +186,21 @@ header.hero-header {
         right: 0;
     }
 
+    .hero-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .social-icons {
+      bottom: 40px; 
+      padding-left: 20px; 
+      display: flex;
+      gap: 50px;
+      align-items: center;
+    }
+
     .location-date-container {
-        position: absolute; 
         bottom: 40px; 
         padding-left: 20px; 
         display: flex;
@@ -181,6 +216,7 @@ header.hero-header {
     .date {
         font-size: 28px;
         margin: 0;
+        margin-bottom: -15px;
     }
 
     .main-logo-container {
@@ -202,10 +238,8 @@ header.hero-header {
     }
 
     .register-btn-container {
-        position: absolute;
-        bottom: 40px;
-        right: 60px;
-        transform: translateY(0);
+        margin-bottom: -15px;
+        padding-right: 5vw;
     }
 
     .hero-content {
