@@ -21,11 +21,6 @@
   background-color: #a8bbbf;
 }
 
-body {
-  min-width: 1024px;
-  /* minimum width for desktop layout */
-}
-
 /* Countdown Timer Styling */
 /* Countdown Timer Container */
 
@@ -45,7 +40,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 3vw;
 }
 
 .time-box {
@@ -53,8 +48,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 8vw;
-  height: 20vh;
+  width: 8vw;
+  height: min(12vw, 18vh);
   background-color: #1d2b3a;
   border-radius: 10px;
   text-align: center;
@@ -67,9 +62,13 @@ body {
   color: #f9c74f;
 }
 
+.time-box .unit {
+  font-size: max(32px, 4vw);
+}
+
 .time-box .label {
   margin-top: 10px;
-  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-size: max(16px, 1.5vw);
   color: white;
   text-transform: uppercase;
   font-family: 'Poppins', sans-serif;
@@ -129,6 +128,7 @@ header.hero-header {
   font-size: 18px;
   border-radius: 5px;
   text-decoration: none;
+  text-align: center;
   font-weight: bold;
   transition: background-color 0.3s;
 }
@@ -181,7 +181,7 @@ header.hero-header {
 }
 
 /* Desktop Layout */
-@media screen and (min-width: 1341px) {
+@media screen and (min-width: 769px) {
   .hyperlinks {
     display: flex;
     gap: 20px;
@@ -210,7 +210,7 @@ header.hero-header {
     display: flex;
     gap: 50px;
     align-items: center;
-    text-align: left;
+    text-align: center;
     color: white;
     font-family: 'Rubik', serif;
     font-weight: 500;
@@ -270,7 +270,7 @@ header.hero-header {
 
 
 /* Mobile Layout */
-@media screen and (max-width: 1340px) {
+@media screen and (max-width: 768px) {
   .burger-menu {
     display: flex;
     flex-direction: column;
@@ -346,6 +346,7 @@ header.hero-header {
     font-size: 1.2rem;
     border-radius: 5px;
     text-decoration: none;
+    text-align: center;
     font-weight: bold;
     transition: background-color 0.3s;
   }
@@ -472,7 +473,8 @@ header.hero-header {
 
 /* Images Carousel */
 .carousel-section {
-  padding: 60px 20px;
+  padding: 60px;
+  padding-left: 0;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -762,7 +764,7 @@ header.hero-header {
   color: #e2e8f0;
   border-radius: 12px;
   padding: 20px;
-  flex: 1 1 300px;
+  flex: 1 1 1 1;
   max-width: 300px;
   display: flex;
   flex-direction: column;
@@ -791,9 +793,6 @@ header.hero-header {
 .tiers .card.partner h2 {
   color: #ff6f61;
 }
-
-
-
 
 .tiers .card p {
   font-size: 1.2rem;
@@ -828,6 +827,17 @@ header.hero-header {
   background: #60a5fa;
   color: #1e293b;
 }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .tiers .card {
+    width: 100vw;
+    max-width: none;
+  }
+}
+
+
+
 
 /* Sponsors Section */
 .sponsors-section {
@@ -892,12 +902,11 @@ header.hero-header {
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .sponsors-container {
-    flex-direction: column;
     align-items: center;
   }
 
   .sponsor-logo {
-    width: 180px;
+    width: 30vw;
     height: auto;
   }
 }
@@ -1149,4 +1158,12 @@ header.hero-header {
   font-size: 1rem;
   font-weight: 500;
   color: #d6d6d6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .team-card {
+    width: 30vw;
+    height: auto;
+  }
 }
