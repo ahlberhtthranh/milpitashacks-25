@@ -21,11 +21,6 @@
   background-color: #a8bbbf;
 }
 
-body {
-  min-width: 1024px;
-  /* minimum width for desktop layout */
-}
-
 /* Countdown Timer Styling */
 /* Countdown Timer Container */
 
@@ -45,7 +40,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 3vw;
 }
 
 .time-box {
@@ -53,8 +48,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 8vw;
-  height: 20vh;
+  width: 8vw;
+  height: min(12vw, 18vh);
   background-color: #1d2b3a;
   border-radius: 10px;
   text-align: center;
@@ -67,9 +62,13 @@ body {
   color: #f9c74f;
 }
 
+.time-box .unit {
+  font-size: max(32px, 4vw);
+}
+
 .time-box .label {
   margin-top: 10px;
-  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-size: max(16px, 1.5vw);
   color: white;
   text-transform: uppercase;
   font-family: 'Poppins', sans-serif;
@@ -129,6 +128,7 @@ header.hero-header {
   font-size: 18px;
   border-radius: 5px;
   text-decoration: none;
+  text-align: center;
   font-weight: bold;
   transition: background-color 0.3s;
 }
@@ -181,7 +181,7 @@ header.hero-header {
 }
 
 /* Desktop Layout */
-@media screen and (min-width: 1341px) {
+@media screen and (min-width: 826px) {
   .hyperlinks {
     display: flex;
     gap: 20px;
@@ -210,7 +210,7 @@ header.hero-header {
     display: flex;
     gap: 50px;
     align-items: center;
-    text-align: left;
+    text-align: center;
     color: white;
     font-family: 'Rubik', serif;
     font-weight: 500;
@@ -218,7 +218,7 @@ header.hero-header {
 
   .location,
   .date {
-    font-size: 28px;
+    font-size: min(2vw,28px);
     margin: 0;
     margin-bottom: -15px;
   }
@@ -266,11 +266,21 @@ header.hero-header {
   .logo-container .mh-logo {
     max-height: 50px;
   }
+
+  .schedule-time {
+    width: 20%;
+    text-align: left;
+  }
+  
+  .schedule-event {
+    width: 80%;
+    text-align: left;
+  }
 }
 
 
 /* Mobile Layout */
-@media screen and (max-width: 1340px) {
+@media screen and (max-width: 825px) {
   .burger-menu {
     display: flex;
     flex-direction: column;
@@ -346,6 +356,7 @@ header.hero-header {
     font-size: 1.2rem;
     border-radius: 5px;
     text-decoration: none;
+    text-align: center;
     font-weight: bold;
     transition: background-color 0.3s;
   }
@@ -397,6 +408,40 @@ header.hero-header {
   .countdown-container {
     display: none !important;
     /* Hides the entire countdown timer container */
+  }
+
+  .timeline-container {
+    grid-template-columns: 1fr;
+    /* This makes it one column if it is like a small screen*/
+  }
+
+  .tiers .card {
+    width: 100vw;
+    max-width: none;
+  }
+
+  .sponsors-container {
+    align-items: center;
+  }
+
+  .sponsor-logo {
+    width: 30vw;
+    height: auto;
+  }
+
+  .team-card {
+    width: 30vw;
+    height: auto;
+  }
+
+  .schedule-time {
+    width: 35%;
+    text-align: left;
+  }
+  
+  .schedule-event {
+    width: 65%;
+    text-align: left;
   }
 }
 
@@ -472,7 +517,8 @@ header.hero-header {
 
 /* Images Carousel */
 .carousel-section {
-  padding: 60px 20px;
+  padding: 60px;
+  padding-left: 0;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -570,16 +616,6 @@ header.hero-header {
   font-size: 1rem;
 }
 
-.schedule-time {
-  width: 20%;
-  text-align: left;
-}
-
-.schedule-event {
-  width: 80%;
-  text-align: left;
-}
-
 .schedule-row:last-child {
   border-bottom: none;
 }
@@ -640,14 +676,6 @@ header.hero-header {
   color: white;
   margin-bottom: 8px;
   margin-top: 8px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .timeline-container {
-    grid-template-columns: 1fr;
-    /* This makes it one column if it is like a small screen*/
-  }
 }
 
 /* Speakers Section */
@@ -749,6 +777,10 @@ header.hero-header {
   margin: 0 auto 20px;
 }
 
+.sponsorship-section footer {
+  margin-top: 25px
+}
+
 .tiers {
   display: flex;
   flex-wrap: wrap;
@@ -762,7 +794,7 @@ header.hero-header {
   color: #e2e8f0;
   border-radius: 12px;
   padding: 20px;
-  flex: 1 1 300px;
+  flex: 1 1 1 1;
   max-width: 300px;
   display: flex;
   flex-direction: column;
@@ -792,9 +824,6 @@ header.hero-header {
   color: #ff6f61;
 }
 
-
-
-
 .tiers .card p {
   font-size: 1.2rem;
   line-height: 1.6;
@@ -807,6 +836,7 @@ header.hero-header {
   margin-bottom: 20px;
   font-size: 1.1rem;
   line-height: 1.8;
+  text-align: left;
 }
 
 .tiers .card a.contact-button {
@@ -828,6 +858,8 @@ header.hero-header {
   background: #60a5fa;
   color: #1e293b;
 }
+
+
 
 /* Sponsors Section */
 .sponsors-section {
@@ -887,19 +919,6 @@ header.hero-header {
 .sponsor-logo:hover {
   transform: scale(1.1);
   box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.2);
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .sponsors-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .sponsor-logo {
-    width: 180px;
-    height: auto;
-  }
 }
 
 
