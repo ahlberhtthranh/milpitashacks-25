@@ -777,6 +777,10 @@ header.hero-header {
   margin: 0 auto 20px;
 }
 
+.sponsorship-section footer {
+  margin-top: 25px
+}
+
 .tiers {
   display: flex;
   flex-wrap: wrap;
@@ -832,6 +836,7 @@ header.hero-header {
   margin-bottom: 20px;
   font-size: 1.1rem;
   line-height: 1.8;
+  text-align: left;
 }
 
 .tiers .card a.contact-button {
