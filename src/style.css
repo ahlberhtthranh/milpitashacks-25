@@ -181,7 +181,7 @@ header.hero-header {
 }
 
 /* Desktop Layout */
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 826px) {
   .hyperlinks {
     display: flex;
     gap: 20px;
@@ -218,7 +218,7 @@ header.hero-header {
 
   .location,
   .date {
-    font-size: 28px;
+    font-size: min(2vw,28px);
     margin: 0;
     margin-bottom: -15px;
   }
@@ -266,11 +266,21 @@ header.hero-header {
   .logo-container .mh-logo {
     max-height: 50px;
   }
+
+  .schedule-time {
+    width: 20%;
+    text-align: left;
+  }
+  
+  .schedule-event {
+    width: 80%;
+    text-align: left;
+  }
 }
 
 
 /* Mobile Layout */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 825px) {
   .burger-menu {
     display: flex;
     flex-direction: column;
@@ -398,6 +408,40 @@ header.hero-header {
   .countdown-container {
     display: none !important;
     /* Hides the entire countdown timer container */
+  }
+
+  .timeline-container {
+    grid-template-columns: 1fr;
+    /* This makes it one column if it is like a small screen*/
+  }
+
+  .tiers .card {
+    width: 100vw;
+    max-width: none;
+  }
+
+  .sponsors-container {
+    align-items: center;
+  }
+
+  .sponsor-logo {
+    width: 30vw;
+    height: auto;
+  }
+
+  .team-card {
+    width: 30vw;
+    height: auto;
+  }
+
+  .schedule-time {
+    width: 35%;
+    text-align: left;
+  }
+  
+  .schedule-event {
+    width: 65%;
+    text-align: left;
   }
 }
 
@@ -572,16 +616,6 @@ header.hero-header {
   font-size: 1rem;
 }
 
-.schedule-time {
-  width: 20%;
-  text-align: left;
-}
-
-.schedule-event {
-  width: 80%;
-  text-align: left;
-}
-
 .schedule-row:last-child {
   border-bottom: none;
 }
@@ -642,14 +676,6 @@ header.hero-header {
   color: white;
   margin-bottom: 8px;
   margin-top: 8px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .timeline-container {
-    grid-template-columns: 1fr;
-    /* This makes it one column if it is like a small screen*/
-  }
 }
 
 /* Speakers Section */
@@ -828,15 +854,6 @@ header.hero-header {
   color: #1e293b;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .tiers .card {
-    width: 100vw;
-    max-width: none;
-  }
-}
-
-
 
 
 /* Sponsors Section */
@@ -897,18 +914,6 @@ header.hero-header {
 .sponsor-logo:hover {
   transform: scale(1.1);
   box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.2);
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .sponsors-container {
-    align-items: center;
-  }
-
-  .sponsor-logo {
-    width: 30vw;
-    height: auto;
-  }
 }
 
 
@@ -1158,12 +1163,4 @@ header.hero-header {
   font-size: 1rem;
   font-weight: 500;
   color: #d6d6d6;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .team-card {
-    width: 30vw;
-    height: auto;
-  }
 }
