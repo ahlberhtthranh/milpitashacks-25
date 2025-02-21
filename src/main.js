@@ -1,4 +1,3 @@
-// JavaScript Code
 document.addEventListener("DOMContentLoaded", () => {
   const targetDate = new Date("May 24, 2025 07:30:00").getTime();
   const countdownContainer = document.querySelector(".countdown-container");
@@ -41,22 +40,25 @@ document.addEventListener("DOMContentLoaded", () => {
 const tiersData = [
   {
     title: "Bronze",
-    price: "$500",
+    price: "$750",
     features: [
-      "Send engineers/mentors to the event",
-      "Distribute materials & resources to participants",
-      "Host a workshop/activity at the event",
-      "Logo on website & presentations",
+      "Logo on website under bronze tier",
+      "Distribute recruiting materials",
+      "Logo on shirts",
+      "Notify everyone on the Discord Server (200+ participants)",
     ],
     className: "bronze", 
   },
   {
     title: "Silver",
-    price: "$1000",
+    price: "$1200",
     features: [
-      "Everything in Bronze",
-      "2 minute presentation at the opening/closing ceremony",
-      "Access to the Milpitas Hacks mailing list",
+      "Everything in Bronze +",
+      "1 Email to 150+ participants",
+      "Logo on website under silver tier",
+      "Send a judge to the panel",
+      "Mentioning company name in both Opening & Closing ceremony",
+      "Access to Devpost and participant emails",
     ],
     className: "silver", 
   },
@@ -64,23 +66,22 @@ const tiersData = [
     title: "Gold",
     price: "$2000",
     features: [
-      "Everything in Silver",
-      "5 minute presentation at the opening/closing ceremony",
-      "Table/demo booth at the event",
-      "3 emails/discord announcements to all participants",
+      "Everything in Silver +",
+      "5 emails to 150+ participants",
+      "Distribute company swag",
+      "Logo on website under gold tier",
+      "Custom award category with company name",
+      "Initial API/Product Demos",
+      "Sending 2 judges to the judging panel",
     ],
     className: "gold", 
   },
   {
     title: "Partner",
-    price: "$3500",
+    price: "$3000",
     features: [
-      "Everything in Gold",
-      "Keynote at the opening/closing ceremony",
-      "Custom project track",
-      "Custom award",
-      "Logo on shirts",
-      "Contact information of the competition winners",
+      "Everything in Gold +",
+      "Request additional custom perks for your company",
     ],
     className: "partner", 
   },
@@ -144,11 +145,34 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCarousel();
   };
 
-  leftArrow.addEventListener("click", () => moveCarousel(-0.95)); 
-  rightArrow.addEventListener("click", () => moveCarousel(0.95)); 
+  leftArrow.addEventListener("click", () => moveCarousel(-1)); 
+  rightArrow.addEventListener("click", () => moveCarousel(1)); 
 
   window.addEventListener("resize", updateCarousel);
 
   // Initialize carousel position
   updateCarousel();
+});
+
+/* --- Interactive Timeline Code Appended Below --- */
+document.addEventListener("DOMContentLoaded", () => {
+  const timelineEvents = document.querySelectorAll('.timeline-section .event');
+
+  timelineEvents.forEach(eventElem => {
+    eventElem.addEventListener('click', () => {
+      // Check if the detail element already exists
+      let detail = eventElem.querySelector('.event-detail');
+
+      if (detail) {
+        // Toggle its visibility
+        detail.classList.toggle('visible');
+      } else {
+        // Create a new detail element using the data-details attribute
+        detail = document.createElement('div');
+        detail.className = 'event-detail visible';
+        detail.textContent = eventElem.getAttribute('data-details');
+        eventElem.appendChild(detail);
+      }
+    });
+  });
 });

@@ -1,9 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 6.5px;
+}
+
+/* Timeline Section Header */
+.timeline-section h1 {
+  color: white;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+/* Ensure the timeline remains in two columns */
+.timeline-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin: 40px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+/* Styling for each timeline event */
+.timeline-column .event {
+  position: relative;
+  padding: 20px;
+  background-color: #1d2b3a;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  text-align: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+/* Time styling in gold */
+.timeline-section .time {
+  color: #f9c74f;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -24,11 +62,16 @@
 /* Countdown Timer Styling */
 /* Countdown Timer Container */
 
+p {
+  font-family: "DM Sans", sans-serif;
+
+}
+
 .countdown-container {
-  max-height: 80vh;
+  max-height: 85vh;
   max-width: 80vw;
   position: absolute;
-  top: 40%;
+  top: 41%;
   right: 12%;
   transform: translateY(-50%);
   text-align: right;
@@ -49,7 +92,7 @@
   justify-content: center;
   align-items: center;
   width: 8vw;
-  height: min(12vw, 18vh);
+  height: min(14vw, 20vh);
   background-color: #1d2b3a;
   border-radius: 10px;
   text-align: center;
@@ -82,7 +125,7 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   background-color: #162635;
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -138,25 +181,7 @@ header.hero-header {
 }
 
 /* Burger Menu Styles */
-.burger-menu {
-  display: none;
-  cursor: pointer;
-  flex-direction: column;
-  gap: 5px;
-  right: 2.5%;
-  top: 3%;
-  position: absolute;
-}
 
-.burger-menu span {
-  width: 45px;
-  height: 8px;
-  background-color: white;
-  border-radius: 5px;
-  transition: 0.3s ease-in-out;
-  margin-right: 3%;
-  margin-top: 3%;
-}
 
 .social-icons {
   display: flex;
@@ -283,10 +308,23 @@ header.hero-header {
 @media screen and (max-width: 825px) {
   .burger-menu {
     display: flex;
+    position: fixed;
+    top: 3%;
+    right: 2.5%;
+    z-index: 1001;
+    cursor: pointer;
     flex-direction: column;
     gap: 5px;
-    position: fixed;
-    z-index: 1001;
+  }
+  
+  .burger-menu span {
+    width: 45px;
+    height: 8px;
+    background-color: white;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+    margin-right: 3%;
+    margin-top: 3%;
   }
 
   .hyperlinks {
@@ -517,8 +555,7 @@ header.hero-header {
 
 /* Images Carousel */
 .carousel-section {
-  padding: 60px;
-  padding-left: 0;
+  padding: 60px 20px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -526,9 +563,9 @@ header.hero-header {
   overflow: hidden;
   width: 100%;
   position: relative;
+  background: #162635; /* if needed */
 }
 
-/* Section Title */
 .carousel-title {
   font-size: 2.5rem;
   font-weight: bold;
@@ -536,7 +573,7 @@ header.hero-header {
   margin-bottom: 30px;
 }
 
-/* Carousel Container */
+/* Carousel Container – no changes here */
 .carousel-container {
   width: 100%;
   max-width: 100%;
@@ -548,32 +585,42 @@ header.hero-header {
 /* Carousel Track */
 .carousel-track {
   display: flex;
-  gap: 30px;
-  width: max-content;
-  white-space: nowrap;
-  animation: scrollAnimation 30s linear infinite;
+  /* Set the track width explicitly.
+     For 5 original images:
+       Each image is 300px wide, and if you add a 30px gap between images (except after the last one),
+       the total width = (300px * 5) + (30px * 4) = 1500px + 120px = 1620px.
+     We duplicate the images so total width = 1620px * 2 = 3240px.
+  */
+  width: 3240px;
+  /* Animate from 0 to -1620px, so the duplicate set immediately follows the original set */
+  animation: scrollAnimation 40s linear infinite;
 }
 
-/* Individual Images */
+/* Carousel Images */
 .carousel-image {
   width: 300px;
   height: 200px;
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  /* Add right margin to space images except on the right edge of the original set */
+  margin-right: 30px;
 }
 
-/* Infinite Scrolling Animation */
+/* Remove the right margin from every 5th image so that the gap is not added at the end of the set */
+.carousel-image:nth-child(5n) {
+  margin-right: 0;
+}
+
+/* Keyframes for Infinite Scrolling */
 @keyframes scrollAnimation {
-  from {
+  0% {
     transform: translateX(0);
   }
-
-  to {
-    transform: translateX(-50%);
+  100% {
+    transform: translateX(-1620px);
   }
 }
-
 
 
 /* Schedule Code */
@@ -658,7 +705,6 @@ header.hero-header {
 
 .event:hover {
   transform: scale(1.05);
-  /* This creates a hover effect on the timeline boxes btw Slightly enlarge the box on hover */
   background-color: #243b4d;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
@@ -923,62 +969,23 @@ header.hero-header {
 
 
 
-/* FAQ Section  */
-
+/* FAQ Section Styles */
 .faq-section {
   color: white;
   padding: 60px 20px;
   text-align: center;
 }
-
 .faq-section h1 {
   font-size: 3rem;
   margin-bottom: 40px;
-  color: white;
 }
-
-/* FAQ Carousel Styles */
-.faq-carousel {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.faq-carousel-wrapper {
-  overflow: hidden;
-  max-width: 900px;
-  margin: 0 auto;
-  position: relative;
-}
-
-.faq-card {
-  background-color: #1d2b3a;
-  color: white;
-  border-radius: 10px;
-  padding: 20px;
-  width: 300px;
-  flex-shrink: 0;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.faq-card.active {
-  transform: scale(1.1);
-  opacity: 1;
-}
-
-.faq-card:not(.active) {
-  transform: scale(0.9);
-  opacity: 0.6;
-}
-
+/* Carousel Container & Arrows */
 .faq-carousel-container {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
-
 .arrow-btn {
   background-color: white;
   border: none;
@@ -993,17 +1000,51 @@ header.hero-header {
   margin: 0 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .arrow-btn:hover {
   transform: scale(1.1);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
-
 .arrow-btn span {
   font-size: 1.5rem;
   color: #162635;
 }
+.faq-carousel-wrapper {
+  overflow-x: hidden;
+  overflow-y: visible;
+  padding-top: 20px;  
+  padding-bottom: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
 
+.faq-carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.faq-card {
+  background-color: #1d2b3a;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  margin: 0 5px;
+  flex-shrink: 0;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0.6;
+  transform: scale(0.9);
+}
+
+.faq-card.active {
+  opacity: 1;
+  transform: scale(1);
+}
+.faq-card h3 {
+  margin-top: 0;
+}
 
 
 
@@ -1113,13 +1154,22 @@ header.hero-header {
 
 /* Team Container */
 .team-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
+  justify-items: center;
 }
+
+.team-container:has(.team-card:nth-last-child(2)) {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+
+
 
 /* Individual Team Card */
 .team-card {
@@ -1156,7 +1206,7 @@ header.hero-header {
   object-fit: cover;
 }
 
-/* Team Member Text Details */
+/* Team Member  Details */
 .team-name {
   font-size: 1.25rem;
   font-weight: bold;
