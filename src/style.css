@@ -268,7 +268,7 @@ header.hero-header {
 
   .register-btn-container {
     margin-bottom: -15px;
-    padding-right: 5vw;
+    padding-right: 3.5vw;
   }
 
   .hero-content {
@@ -585,14 +585,7 @@ header.hero-header {
 /* Carousel Track */
 .carousel-track {
   display: flex;
-  /* Set the track width explicitly.
-     For 5 original images:
-       Each image is 300px wide, and if you add a 30px gap between images (except after the last one),
-       the total width = (300px * 5) + (30px * 4) = 1500px + 120px = 1620px.
-     We duplicate the images so total width = 1620px * 2 = 3240px.
-  */
   width: 3240px;
-  /* Animate from 0 to -1620px, so the duplicate set immediately follows the original set */
   animation: scrollAnimation 40s linear infinite;
 }
 
@@ -603,11 +596,9 @@ header.hero-header {
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  /* Add right margin to space images except on the right edge of the original set */
   margin-right: 30px;
 }
 
-/* Remove the right margin from every 5th image so that the gap is not added at the end of the set */
 .carousel-image:nth-child(5n) {
   margin-right: 0;
 }
@@ -676,7 +667,6 @@ header.hero-header {
 .timeline-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* This makes two columns */
   gap: 40px;
   margin: 40px auto;
   max-width: 1200px;
@@ -687,7 +677,7 @@ header.hero-header {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  /* This puts a space between events */
+  
 }
 
 .event {
@@ -698,10 +688,20 @@ header.hero-header {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, background-color 0.3s ease;
   text-align: center;
-  /* This puts the text in the middle in the boxes */
   margin-bottom: 20px;
-  /* This puts a space between each box btw */
+  
 }
+
+.event-detail {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #fff;              
+  border-top: 1px solid #3a3a5a;
+  padding-top: 10px;
+  display: none;
+  pointer-events: none;    
+}
+
 
 .event:hover {
   transform: scale(1.05);

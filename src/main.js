@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
   }
 
-  // Ensure countdown does not cause horizontal scrolling
   function fixOverflow() {
     countdownContainer.style.overflow = "hidden";
     countdownContainer.style.maxWidth = "100%";
@@ -31,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
     countdownContainer.style.justifyContent = "center"; 
   }
 
-  // Run fixes
   fixOverflow();
   setInterval(updateCountdown, 1000);
   updateCountdown();
@@ -130,11 +128,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const updateCarousel = () => {
     const cardWidth = cards[0].offsetWidth + 5; 
     const offset = (carousel.parentElement.offsetWidth - cardWidth) / 2;
-
-    // Adjust the carousel translation
     carousel.style.transform = `translateX(calc(-${currentIndex * cardWidth}px + ${offset}px))`;
 
-    // Highlight the active card
     cards.forEach((card, index) => {
       card.classList.toggle("active", index === currentIndex);
     });
@@ -150,29 +145,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("resize", updateCarousel);
 
-  // Initialize carousel position
   updateCarousel();
 });
 
-/* --- Interactive Timeline Code Appended Below --- */
 document.addEventListener("DOMContentLoaded", () => {
   const timelineEvents = document.querySelectorAll('.timeline-section .event');
 
   timelineEvents.forEach(eventElem => {
     eventElem.addEventListener('click', () => {
-      // Check if the detail element already exists
       let detail = eventElem.querySelector('.event-detail');
 
       if (detail) {
-        // Toggle its visibility
         detail.classList.toggle('visible');
       } else {
-        // Create a new detail element using the data-details attribute
         detail = document.createElement('div');
         detail.className = 'event-detail visible';
         detail.textContent = eventElem.getAttribute('data-details');
         eventElem.appendChild(detail);
       }
     });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const burgerMenu = document.querySelector('.burger-menu');
+  const hyperlinks = document.querySelector('.hyperlinks');
+
+  burgerMenu.addEventListener("click", () => {
+    burgerMenu.classList.toggle("open");
+    hyperlinks.classList.toggle("show");
   });
 });
