@@ -1219,3 +1219,8 @@ header.hero-header {
   font-weight: 500;
   color: #d6d6d6;
 }
+
+.team-card .social-links .social-icon {
+  width: 20px;
+  height: auto;
+}
