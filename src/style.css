@@ -1256,6 +1256,7 @@ header.hero-header {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    padding: 0;
   }
 
   .faq-carousel-wrapper {
@@ -1276,21 +1277,22 @@ header.hero-header {
     border-radius: 50%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transform: translateY(-50%);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: absolute; 
     z-index: 10;
   }
 
   .faq-left-arrow {
-    left: 5vw; 
+    left: calc(50% - 200px);
   }
 
   .faq-right-arrow {
-    right: 5vw; 
+    right: calc(50% - 200px); 
   }
 }
