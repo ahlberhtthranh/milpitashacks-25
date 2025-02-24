@@ -1248,21 +1248,32 @@ header.hero-header {
 }
 
 @media screen and (max-width: 825px) {
-  
-  .faq-card {
-    width: 70vw;        
-    margin: 0 auto;     
+  .faq-carousel-container {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    overflow: visible; 
+    margin: 0 auto;
   }
-
+  .faq-carousel-wrapper {
+    max-width: 100%;
+    overflow: visible; 
+    padding: 0 20px; 
+  }
+  .faq-card {
+    width: 80vw;       
+    margin: 0 auto;
+  }
   .arrow-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 999;      
   }
   .faq-left-arrow {
-    left: 10px;   
+    left: 10px;        
   }
   .faq-right-arrow {
-    right: 10px;  
+    right: 10px;
   }
 }
