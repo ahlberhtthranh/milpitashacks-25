@@ -126,7 +126,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentIndex = 0;
 
   const updateCarousel = () => {
-    const cardWidth = cards[0].offsetWidth + 5; 
+    console.log(cards[0].offsetWidth);
+    const cardWidth = cards[0].offsetWidth + 10; 
     const offset = (carousel.parentElement.offsetWidth - cardWidth) / 2;
     carousel.style.transform = `translateX(calc(-${currentIndex * cardWidth}px + ${offset}px))`;
 
