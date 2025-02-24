@@ -391,7 +391,12 @@ header.hero-header {
   }
 
   .logo-container .mh-logo {
+    position: relative;
     max-height: 50px;
+    scale: 250%;
+    margin-left: 3vh;
+    transform: translateY(0.5vh);
+    z-index: 1001;
   }
 
   .schedule-time {
@@ -525,8 +530,12 @@ header.hero-header {
   }
 
   .mh-logo {
+    position: relative;
     max-height: 50px;
+    scale: 250%;
+    margin-left: 5vh;
     width: auto;
+    z-index: 1001;
   }
 
   .location-date-container {
@@ -926,6 +935,15 @@ header.hero-header {
   max-width: 800px;
   margin: 0 auto 20px;
 }
+.sponsorship-section footer p a {
+  color: inherit;        
+  font-size: inherit;    
+  text-decoration: none;
+}
+.sponsorship-section footer p a:hover {
+  text-decoration: underline; 
+}
+
 
 .sponsorship-section footer {
   margin-top: 25px
