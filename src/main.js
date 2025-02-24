@@ -126,11 +126,21 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentIndex = 0;
 
   const updateCarousel = () => {
-    console.log(cards[0].offsetWidth);
-    const cardWidth = cards[0].offsetWidth + 10; 
-    const offset = (carousel.parentElement.offsetWidth - cardWidth) / 2;
-    carousel.style.transform = `translateX(calc(-${currentIndex * cardWidth}px + ${offset}px))`;
-
+    const carousel = document.querySelector(".faq-carousel");
+    const cards = document.querySelectorAll(".faq-card");
+    const currentCard = cards[currentIndex];
+  
+    // Calculate offset to perfectly center active card
+    const containerWidth = carousel.parentElement.offsetWidth;
+    const cardWidth = currentCard.offsetWidth;
+    const cardLeft = currentCard.offsetLeft;
+  
+    const offset = cardLeft - (containerWidth / 2 - cardWidth / 2);
+  
+    // Apply transform
+    carousel.style.transform = `translateX(${-offset}px)`;
+  
+    // Update active state
     cards.forEach((card, index) => {
       card.classList.toggle("active", index === currentIndex);
     });
