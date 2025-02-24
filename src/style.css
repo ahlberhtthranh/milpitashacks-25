@@ -1246,3 +1246,23 @@ header.hero-header {
   color: white;
   margin-top: 5px;
 }
+
+@media screen and (max-width: 825px) {
+  
+  .faq-card {
+    width: 70vw;        
+    margin: 0 auto;     
+  }
+
+  .arrow-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .faq-left-arrow {
+    left: 10px;   
+  }
+  .faq-right-arrow {
+    right: 10px;  
+  }
+}
