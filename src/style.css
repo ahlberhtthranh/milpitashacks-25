@@ -1131,10 +1131,10 @@ header.hero-header {
 }
 .faq-carousel-wrapper {
   overflow-x: hidden;
-  overflow-y: visible;
+  overflow-y: hidden;
   padding-top: 20px;  
   padding-bottom: 20px;
-  max-width: 900px;
+  max-width: 100%;
   margin: 0 auto;
   position: relative;
 }
@@ -1266,16 +1266,24 @@ header.hero-header {
   }
 
   .faq-card {
-    width: 80vw; 
     max-width: 500px;
-    margin: 0 auto;
+    margin: 0 5vw;
   }
 
   .arrow-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 999;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: absolute; 
+    z-index: 10;
   }
 
   .faq-left-arrow {
