@@ -1,3 +1,9 @@
 export default {
-    base: "/"
+    base: "./", 
+    build: {
+        outDir: "dist",
+        rollupOptions: {
+            input: "index.html" 
+        }
+    }
 }
