@@ -1,4 +1,4 @@
 name = "milpitas-hacks"
 compatibility_date = "2025-2-24"
 assets = { directory = "dist" }
-pages_build_output_dir = "dist"
+pages_build_output_dir = "/dist"
