@@ -11,7 +11,9 @@
     "deploy:worker": "npm run build && wrangler deploy"
   },
   "dependencies": {
-    "vite": "^5.4.14",
-    "wrangler": "^3.109.3"
+    "vite": "^5.4.14"
+  },
+  "devDependencies": {
+    "wrangler": "^3.110.0"
   }
 }
