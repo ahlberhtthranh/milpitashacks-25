@@ -1,3 +1,3 @@
 export default {
-    base: "/milpitashacks-25/"
+    base: "/"
 }
