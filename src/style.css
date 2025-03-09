@@ -678,10 +678,7 @@ header.hero-header {
   line-height: 1.5;
 }
 
-
-
-
-
+/*START*/
 
 /* Images Carousel */
 .carousel-section {
@@ -701,6 +698,7 @@ header.hero-header {
   font-weight: bold;
   color: white;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 /* Carousel Container – no changes here */
@@ -715,8 +713,10 @@ header.hero-header {
 /* Carousel Track */
 .carousel-track {
   display: flex;
-  width: 3240px;
-  animation: scrollAnimation 40s linear infinite;
+  gap: 20px;
+  animation: scroll 10s linear infinite;
+  white-space: nowrap;
+  width: max-content;
 }
 
 /* Carousel Images */
@@ -725,21 +725,25 @@ header.hero-header {
   height: 200px;
   object-fit: cover;
   border-radius: 10px;
+  flex-shrink: 0;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  margin-right: 30px;
+  margin-right: 10px;
 }
 
 .carousel-image:nth-child(5n) {
   margin-right: 0;
-}
+} 
+
+/*END*/
+
 
 /* Keyframes for Infinite Scrolling */
 @keyframes scrollAnimation {
-  0% {
+  from {
     transform: translateX(0);
   }
-  100% {
-    transform: translateX(-1620px);
+  to {
+    transform: translateX(calc(-50%)); /* Halfway ensures looping is seamless */
   }
 }
 
