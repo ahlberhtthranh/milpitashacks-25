@@ -187,3 +187,41 @@ document.addEventListener("DOMContentLoaded", () => {
     hyperlinks.classList.toggle("show");
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".carousel-track");
+  const images = Array.from(track.children);
+  const trackWidth = images[0].offsetWidth * images.length;
+  track.style.width = `${trackWidth * 2}px`; // Ensure enough space for seamless looping
+
+  // Clone images for seamless scrolling
+  images.forEach((image) => {
+      const clone = image.cloneNode(true);
+      track.appendChild(clone);
+  });
+
+  let scrollAmount = 0;
+  const scrollSpeed = 1; // Adjust speed
+
+  function scrollCarousel() {
+      scrollAmount -= scrollSpeed;
+      if (scrollAmount <= -trackWidth) {
+          scrollAmount = 0; // Reset scroll position to prevent jump
+      }
+      track.style.transform = `translateX(${scrollAmount}px)`;
+  }
+
+  function startScrolling() {
+      return setInterval(scrollCarousel, 16); // Keeps running even when tabbed out
+  }
+
+  let scrollInterval = startScrolling();
+
+  document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "visible") {
+          scrollInterval = startScrolling(); // Resume scrolling when tabbed back in
+      } else {
+          clearInterval(scrollInterval); // Stop interval to prevent performance issues
+      }
+  });
+});
