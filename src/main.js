@@ -106,7 +106,7 @@ tiersData.forEach((tier) => {
 
   const button = document.createElement("a");
   button.textContent = "Contact Us";
-  button.href = "mailto:milpitashacks@gmail.com"; 
+  button.href = "mailto:team@milpitashacks.com"; 
   button.classList.add("contact-button");
 
   card.appendChild(title);
