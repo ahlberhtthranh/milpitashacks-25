@@ -1074,6 +1074,17 @@ header.hero-header {
   margin-bottom: 40px;
 }
 
+.sponsor-box {
+  background-color: rgba(255, 255, 255, 0.8); 
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 110px;
+}
 .sponsor-logo {
   width: 200px;
   height: 100px;
