@@ -1074,11 +1074,23 @@ header.hero-header {
   margin-bottom: 40px;
 }
 
+.sponsor-box {
+  background-color: #ffffff;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 110px;
+}
 .sponsor-logo {
   width: 200px;
   height: 100px;
-  background-color: rgba(255, 255, 255, 0.1);
-  display: flex;
+  background-color: #f0f0f0;
+/*   background-color: rgba(255, 255, 255, 0.65);
+  display: flex; */
   justify-content: center;
   align-items: center;
   border-radius: 10px;
@@ -1086,6 +1098,10 @@ header.hero-header {
   object-fit: contain;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.sponsor-logo {
+  filter: brightness(1.1) contrast(1.2);
+}
+
 
 .sponsor-logo:hover {
   transform: scale(1.1);
