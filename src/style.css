@@ -1267,6 +1267,13 @@ header.hero-header {
   margin-top: 5px;
 }
 
+.judge-card .social-links .social-icon {
+  width: 20px;
+  height: auto;
+  margin-top: 10px;
+}
+
+
 @media screen and (max-width: 825px) {
   .faq-carousel-container {
     position: relative;

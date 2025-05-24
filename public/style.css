@@ -191,9 +191,20 @@ header.hero-header {
 }
 
 /* Icon styling */
-.social-icon {
+
+.hero-social-icon {
   transition-duration: 0.5s;
   width: 8vh;
+  margin-left: -0.6vw;
+  margin-right: -0.6vw;
+  padding: 0;
+  transform: translateY(0.75vh);
+  filter: invert();
+}
+
+.social-icon {
+  transition-duration: 0.5s;
+  width: 5vh;
   margin-left: -0.6vw;
   margin-right: -0.6vw;
   padding: 0;
@@ -298,11 +309,6 @@ header.hero-header {
   font-size: 1rem;
   font-weight: 500;
   color: #d6d6d6;
-}
-
-.team-card .social-links .social-icon {
-  width: 20px;
-  height: auto;
 }
 
 /* Desktop Layout */
@@ -1188,18 +1194,23 @@ header.hero-header {
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
+  align-items: stretch; /* Ensures children stretch to match tallest sibling */
 }
 
-/*  Judge Card */
 .judge-card {
   background-color: #1d2b3a;
   border-radius: 12px;
   padding: 20px;
-  max-width: 300px;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 300px; /* This defines a flexible basis but still allows wrapping */
+  max-width: 300px;
+  align-self: stretch; /* Makes each card fill the container's height */
 }
+
 
 .judge-card:hover {
   transform: translateY(-5px);
